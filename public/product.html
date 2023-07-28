@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE-edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>product - </title>
+		
+		<link rel="stylesheet" href="../css/home.css">
+		<link rel="stylesheet" href="../css/product.css">
+	</head>
+	<body>
+		
+		<nav class="navbar"></nav>
+		
+		
+		<section class="product-details">
+			<div class="image-slider">
+				<div class="product-images">
+					<img src="" class="active" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+				</div>
+			</div>
+			<div class="details">
+				<h2 class="product-brand"></h2>
+				<p class="product-short-des"></p>
+				<span class="product-price"></span>
+				<span class="product-actual-price"></span>
+				<span class="product-discount"></span>
+				
+				<p class="product-sub-heading">select size</p>
+				
+				<input type="radio" name="size" value="xs" hidden id="xs-size">
+				<label for="xs-size" class="size-radio-btn">xs</label>
+				<input type="radio" name="size" value="s" hidden id="s-size">
+				<label for="s-size" class="size-radio-btn">s</label>
+				<input type="radio" name="size" value="m" hidden id="m-size">
+				<label for="m-size" class="size-radio-btn">m</label>
+				<input type="radio" name="size" value="l" hidden id="l-size">
+				<label for="l-size" class="size-radio-btn">l</label>
+				<input type="radio" name="size" value="xl" hidden id="xl-size">
+				<label for="xl-size" class="size-radio-btn">xl</label>
+				<input type="radio" name="size" value="xxl" hidden id="xxl-size">
+				<label for="xxl-size" class="size-radio-btn">xxl</label>
+				<input type="radio" name="size" value="xxxl" hidden id="xxxl-size">
+				<label for="xxxl-size" class="size-radio-btn">xxxl</label>
+				
+				<div class="btn-group">
+					<button class="btn cart-btn">add to cart</button>
+					<button class="btn wishlist-btn">add to wishlist</button>
+				</div>
+			</div>
+		</section>
+		
+		<section class="detail-des">
+			<h2 class="heading">description</h2>
+			<p class="des"></p>
+		</section>
+		
+		<section class="container-for-card-slider"></section>
+		
+		<!-- cards-container -->
+		<!--<section class="product">
+			<h2 class="product-category">shirts</h2>
+			<button class="pre-btn"><img src="./img/arrow.png" alt=""></button>
+			<button class="nxt-btn"><img src="./img/arrow.png" alt=""></button>
+			<div class="product-container">
+				<div class="product-card">
+					<div class="product-image">
+						<span class="discount-tag">50% off</span>
+						<img src="./img/mon/card 1.jpg" class="product-thumb" alt="">
+						<button class="card-btn">add to wishlist</button>
+					</div>
+					<div class="product-info">
+						<h2 class="product-prand">haneen</h2>
+						<p class="product-short-des">the medium scrunchie from haneen collection.</p>
+						<span class="price">10LE</span><span class="actual-price">20LE</span>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">
+						<span class="discount-tag">50% off</span>
+						<img src="./img/mon/card 2.jpg" class="product-thumb" alt="">
+						<button class="card-btn">add to wishlist</button>
+					</div>
+					<div class="product-info">
+						<h2 class="product-prand">Mento</h2>
+						<p class="product-short-des">the large scrunchie from mento collection.</p>
+						<span class="price">11LE</span><span class="actual-price">23LE</span>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">
+						<span class="discount-tag">50% off</span>
+						<img src="./img/mon/card 3.jpg" class="product-thumb" alt="">
+						<button class="card-btn">add to wishlist</button>
+					</div>
+					<div class="product-info">
+						<h2 class="product-prand">lora</h2>
+						<p class="product-short-des">the large scrunchie from lora collection.</p>
+						<span class="price">11LE</span><span class="actual-price">23LE</span>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">
+						<span class="discount-tag">50% off</span>
+						<img src="./img/mon/card 4.jpg" class="product-thumb" alt="">
+						<button class="card-btn">add to wishlist</button>
+					</div>
+					<div class="product-info">
+						<h2 class="product-prand">aseel</h2>
+						<p class="product-short-des">the large scrunchie from aseel collection.</p>
+						<span class="price">11LE</span><span class="actual-price">23LE</span>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">
+						<span class="discount-tag">50% off</span>
+						<img src="./img/mon/card 5.jpg" class="product-thumb" alt="">
+						<button class="card-btn">add to wishlist</button>
+					</div>
+					<div class="product-info">
+						<h2 class="product-prand">blackswan</h2>
+						<p class="product-short-des">the small scrunchie from blackswan collection.</p>
+						<span class="price">9LE</span><span class="actual-price">17LE</span>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">
+						<span class="discount-tag">50% off</span>
+						<img src="./img/mon/card 6.jpg" class="product-thumb" alt="">
+						<button class="card-btn">add to wishlist</button>
+					</div>
+					<div class="product-info">
+						<h2 class="product-prand">caramel</h2>
+						<p class="product-short-des">the mini ribbon clip from caramel collection.</p>
+						<span class="price">8LE</span><span class="actual-price">15LE</span>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">
+						<span class="discount-tag">50% off</span>
+						<img src="./img/mon/card 7.jpg" class="product-thumb" alt="">
+						<button class="card-btn">add to wishlist</button>
+					</div>
+					<div class="product-info">
+						<h2 class="product-prand">blackswan</h2>
+						<p class="product-short-des">the medium scrunchie from blackswan collection.</p>
+						<span class="price">10LE</span><span class="actual-price">20LE</span>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">
+						<span class="discount-tag">50% off</span>
+						<img src="./img/mon/card 8.jpg" class="product-thumb" alt="">
+						<button class="card-btn">add to wishlist</button>
+					</div>
+					<div class="product-info">
+						<h2 class="product-prand">blackswan</h2>
+						<p class="product-short-des">the korean ribbon clip from blackswan collection.</p>
+						<span class="price">20LE</span><span class="actual-price">39LE</span>
+					</div>
+				</div>
+				
+			</div>
+		</section>-->
+		
+		<!-- cards-container -->
+		<!--<section class="product">
+			<h2 class="product-category">shoes</h2>
+			<button class="pre-btn"><img src="./img/arrow.png" alt=""></button>
+			<button class="nxt-btn"><img src="./img/arrow.png" alt=""></button>
+			<div class="product-container">
+				<div class="product-card">
+					<div class="product-image">
+						<span class="discount-tag">50% off</span>
+						<img src="./img/mon/card 1.jpg" class="product-thumb" alt="">
+						<button class="card-btn">add to wishlist</button>
+					</div>
+					<div class="product-info">
+						<h2 class="product-prand">haneen</h2>
+						<p class="product-short-des">the medium scrunchie from haneen collection.</p>
+						<span class="price">10LE</span><span class="actual-price">20LE</span>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">
+						<span class="discount-tag">50% off</span>
+						<img src="./img/mon/card 2.jpg" class="product-thumb" alt="">
+						<button class="card-btn">add to wishlist</button>
+					</div>
+					<div class="product-info">
+						<h2 class="product-prand">Mento</h2>
+						<p class="product-short-des">the large scrunchie from mento collection.</p>
+						<span class="price">11LE</span><span class="actual-price">23LE</span>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">
+						<span class="discount-tag">50% off</span>
+						<img src="./img/mon/card 3.jpg" class="product-thumb" alt="">
+						<button class="card-btn">add to wishlist</button>
+					</div>
+					<div class="product-info">
+						<h2 class="product-prand">lora</h2>
+						<p class="product-short-des">the large scrunchie from lora collection.</p>
+						<span class="price">11LE</span><span class="actual-price">23LE</span>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">
+						<span class="discount-tag">50% off</span>
+						<img src="./img/mon/card 4.jpg" class="product-thumb" alt="">
+						<button class="card-btn">add to wishlist</button>
+					</div>
+					<div class="product-info">
+						<h2 class="product-prand">aseel</h2>
+						<p class="product-short-des">the large scrunchie from aseel collection.</p>
+						<span class="price">11LE</span><span class="actual-price">23LE</span>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">
+						<span class="discount-tag">50% off</span>
+						<img src="./img/mon/card 5.jpg" class="product-thumb" alt="">
+						<button class="card-btn">add to wishlist</button>
+					</div>
+					<div class="product-info">
+						<h2 class="product-prand">blackswan</h2>
+						<p class="product-short-des">the small scrunchie from blackswan collection.</p>
+						<span class="price">9LE</span><span class="actual-price">17LE</span>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">
+						<span class="discount-tag">50% off</span>
+						<img src="./img/mon/card 6.jpg" class="product-thumb" alt="">
+						<button class="card-btn">add to wishlist</button>
+					</div>
+					<div class="product-info">
+						<h2 class="product-prand">caramel</h2>
+						<p class="product-short-des">the mini ribbon clip from caramel collection.</p>
+						<span class="price">8LE</span><span class="actual-price">15LE</span>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">
+						<span class="discount-tag">50% off</span>
+						<img src="./img/mon/card 7.jpg" class="product-thumb" alt="">
+						<button class="card-btn">add to wishlist</button>
+					</div>
+					<div class="product-info">
+						<h2 class="product-prand">blackswan</h2>
+						<p class="product-short-des">the medium scrunchie from blackswan collection.</p>
+						<span class="price">10LE</span><span class="actual-price">20LE</span>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">
+						<span class="discount-tag">50% off</span>
+						<img src="./img/mon/card 8.jpg" class="product-thumb" alt="">
+						<button class="card-btn">add to wishlist</button>
+					</div>
+					<div class="product-info">
+						<h2 class="product-prand">blackswan</h2>
+						<p class="product-short-des">the korean ribbon clip from blackswan collection.</p>
+						<span class="price">20LE</span><span class="actual-price">39LE</span>
+					</div>
+				</div>
+				
+			</div>
+		</section>-->
+	
+		
+		<footer></footer>
+		
+		<script src="../js/nav.js"></script>
+		<script src="../js/footer.js"></script>
+		<script src="../js/home.js"></script>
+		<script src="../js/product.js"></script>
+		
+		<!-- ionicon link -->
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	</body>
+</html>

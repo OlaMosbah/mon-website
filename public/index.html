@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.8">
+		<title>MON Rafaheya</title>
+		
+		<link rel="stylesheet" href="./css/home.css">
+
+		
+	</head>
+	<body>
+	
+		<!-- بداية النافيجيشن بار متضمن اللوجو والكارت والبحث تحتهم القوائم -->
+		<nav class="navbar" data-header></nav>
+		
+		<!-- hero section -->
+		<header class="hero-section">
+			<div class="content">
+				<img src="./img/MON light-logo.png" class="logo" alt="">
+				<p class="sub-heading">the luxury place for your luxury look</p>
+			</div>
+		</header>
+		
+		<section id="men-tshirt-products"></section>
+		
+		<!-- collections -->
+		<section class="collection-container">
+			<a href="#" class="collection">
+				<img src="img/bags.jpg" alt="">
+				<p class="collection-title">bages <br> comming soon</p>
+			</a>
+			<a href="#" class="collection">
+				<img src="img/pillowcasses.jpg" alt="">
+				<p class="collection-title">satin <br> pillocasses</p>
+			</a>
+			<a href="#" class="collection">
+				<img src="img/hair accessories.jpg" alt="">
+				<p class="collection-title">hair <br> accessories</p>
+			</a>
+		</section>
+		
+		<section id="men-tshirt-products-2"></section>
+		
+		<!-- #NEWSLETTER -woodex website-->
+
+      <section class="section newsletter">
+        <div class="container">
+
+          <div class="newsletter-card" style="background-image: url('./img/newsletter-bg.png')">
+
+            <h2 class="card-title">Subscribe Newsletter</h2>
+
+            <p class="card-text">
+              Enter your email below to be the first to know about new collections and product launches.
+            </p>
+
+            <form action="" class="card-form">
+
+              <div class="input-wrapper">
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <input type="email" name="emal" placeholder="Enter your email" required class="input-field">
+              </div>
+
+              <button type="submit" class="btn btn-primary w-100">
+                <span>Subscribe</span>
+
+                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+      </section>
+						
+		<footer></footer>
+		
+		<!-- #BACK TO TOP -->
+		<a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+			<ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+		</a>
+		
+		<script src="./js/nav.js"></script>
+		<script src="./js/footer.js"></script>
+		<script src="./js/home.js"></script>
+		<!--Men Tshirts بيجيبها من التاجز اللي بتتحط اثناء انشاء المنتج-->
+		<script>
+			getProducts('Best Seller').then(data => createProductSlider(data, '#men-tshirt-products', 'Best Seller'))
+			getProducts('New Arrivals').then(data => createProductSlider(data, '#men-tshirt-products-2', 'Men T-shirt'))
+		</script>
+		
+		<!-- ionicon link -->
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	</body>
+</html>
