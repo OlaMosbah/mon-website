@@ -56,11 +56,11 @@ const createProductCards = (data, parent) => {
 		if(data[i].id != decodeURI(location.pathname.split('/').pop())){
 			middle += `
 			<div class="product-card">
-				<div class="product-image">
+				<div class="product-image" onclick="location.href = '/products/${data[i].id}'">
 					<span class="discount-tag">${data[i].discount}% off</span>
 					<img src="${data[i].images[0]}" class="product-thumb" alt="">
 				</div>
-				<div class="product-info" onclick="location.href = '/products/${data[i].id}'">
+				<div class="product-info" >
 					<h2 class="product-prand">${data[i].name}</h2>
 					<p class="product-short-des">${data[i].shortDes}</p>
 					<span class="price">${data[i].sellPrice}LE</span><span class="actual-price">${data[i].actualPrice}LE</span>
@@ -98,3 +98,36 @@ const add_product_to_cart_or_wishlist = (type, product) => {
 	localStorage.setItem(type, JSON.stringify(data));
 	return 'added';
 }
+
+/**
+ * add event on element
+ */
+
+const addEventOnElem = function (elem, type, callback) {
+  if (elem.length > 1) {
+    for (let i = 0; i < elem.length; i++) {
+      elem[i].addEventListener(type, callback);
+    }
+  } else {
+    elem.addEventListener(type, callback);
+  }
+}
+
+/**
+ * header & back top btn active when window scroll down to 100px -woodecs toturial-
+ */
+
+const header = document.querySelector("[data-header]");
+const backTopBtn = document.querySelector("[data-back-top-btn]");
+
+const showElemOnScroll = function () {
+  if (window.scrollY > 100) {
+    header.classList.add("active");
+    backTopBtn.classList.add("active");
+  } else {
+    header.classList.remove("active");
+    backTopBtn.classList.remove("active");
+  }
+}
+
+addEventOnElem(window, "scroll", showElemOnScroll);

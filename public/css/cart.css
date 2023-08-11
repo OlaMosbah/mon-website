@@ -1,16 +1,13 @@
 .cart-section{
-	width: 100%;
-	padding: 20px 10vw;
+	padding: 20px 2vw;
+	padding-top: 0px;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 }
 
-.product-list{
-	width: 70%;
-}
-
 .checkout-section{
-	width: 28%;
+	width: 100%;
 }
 
 .section-heading{
@@ -23,6 +20,7 @@
 .cart, .wishlist{
 	width: 100%;
 	padding: 20px;
+	padding-inline: 5px 7px;/**/
 	border-radius: 5px;
 	border: 1px solid #d8d8d8;
 	margin-bottom: 60px;
@@ -55,13 +53,13 @@
 }
 
 .sm-product-name{
-	font-size: 25px;
+	font-size: 18px;
 	font-weight: 700;
 	text-transform: capitalize;	
 }
 
 .sm-des{
-	font-size: 18px;
+	font-size: /*18*/14px;
 	opacity: 0.5;
 	line-height: 25px;
 	text-transform: capitalize;
@@ -72,7 +70,7 @@
 	width: 70px;
 	height: 30px;
 	display: flex;
-	margin-right: 20px;
+	/*margin-right: 20px;*/
 }
 
 .counter-btn, .item-count{
@@ -94,9 +92,11 @@
 }
 
 .sm-price{
-	font-size: 50px;
+	font-size: 15px;
 	font-weight: 500;
 	color: #383838;
+	margin-top: 15px; /**/
+	text-align: center;
 }
 
 .sm-delete-btn{
@@ -160,3 +160,83 @@
 	margin: 10px 0;
 }
 
+
+/*-----------------------------------*\
+ * #MEDIA QUARIES
+\*-----------------------------------*/
+
+/* responsive for larger than 480px screen */
+
+@media (min-width: 480px) {
+
+}
+
+/* responsive for larger than 580px screen */
+
+@media (min-width: 580px) {
+
+}
+
+/* responsive for larger than 768px screen */
+
+@media (min-width: 768px) {
+
+}
+
+/* responsive for larger than 992px screen */
+
+@media (min-width: 992px) {
+	.cart-section{
+		width: 100%;
+		padding: 20px 10vw;
+		/*display: flex;
+		justify-content: space-between;*/
+	}
+	
+	.product-list{
+		width: 70%;
+	}
+
+	.checkout-section{
+		width: 28%;
+	}
+	.cart, .wishlist{
+		padding: 20px;
+	}
+	
+	.countPrice{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.sm-price{
+		font-size: 50px;
+		margin: 0px;
+		/*font-weight: 500;
+		color: #383838;*/
+	}
+	
+	.item-counter{
+		margin-right: 20px;
+	}
+	
+	.sm-product-name{
+		font-size: 25px;
+	}
+
+	.sm-des{
+		font-size: 18px;
+	}
+
+	.item-counter{
+		margin-right: 20px;
+	}
+
+}
+
+/* responsive for larger than 1200px screen */
+
+@media (min-width: 1200px) {
+
+}

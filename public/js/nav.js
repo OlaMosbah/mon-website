@@ -1,36 +1,97 @@
 const creatNav = () => {
 	let nav = document.querySelector('.navbar');
 	nav.innerHTML = `
-			<div class="nav">
-				<a href="/"><img src="../img/MON Logo.png" class="brand-logo" alt=""></a>
-				<div class="nav-items">
-					<div class="search">
-						<input type="search" name="search" placeholder="Search Anything..." class="input-field">
-						<ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-						
+    <div class="container">
+		<div class="overlay" data-overlay></div>
+		<a href="/"><img src="../img/MON Logo.png" alt="MON logo" class="brand-logo"></a>
+		<div class="nav-items">
+			<!-- search -->
+			<div class="search">
+				<input type="search" name="search" placeholder="Search Anything..." class="search-box">
+				<ion-icon class="search-btn" name="search-outline" aria-hidden="true"></ion-icon>
+			</div>
+		  	<div class="header-actions">
+				<a class="header-action-btn">
+					<ion-icon name="person-outline" id="user-img" aria-hidden="true"></ion-icon>
+					<div class="login-logout-popup hide">
+						<p class="account-info">Log in as, name</p>
+						<button class="btn" id="user-btn">Log out</button>
 					</div>
-					<a>
-						<img src="../img/MONuser.png" id="user-img" alt="">
-						<div class="login-logout-popup hide">
-							<p class="account-info">Log in as, name</p>
-							<button class="btn" id="user-btn">Log out</button>
-						</div>
-					</a>
-					<a href="/cart"><img src="../img/MONcart.png" alt=""></a>
-				</div>
+				</a>
+				<!-- search -->		
+				<button class="header-action-btn">
+					<ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+				</button>
+				<a href="#" class="header-action-btn">
+					<ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+					<span class="btn-badge">0</span>
+				</a>
+				<a href="/cart" class="header-action-btn">
+					<ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+					<span class="cart-btn-badge">0</span>
+				</a>
+			</div>
+		</div>
+		<button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<div class="sidenav" data-navbar>
+			<div class="sidenav-top">
+				<a href="/"><img src="../img/MON Logo.png" alt="MON logo" width="78" height="50"></a>
+				<button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+					<ion-icon name="close-outline"></ion-icon>
+				</button>
 			</div>
 			<ul class="links-container">
-				<li class="link-item"><a href="/" class="link">home</a></li>
+				<li class="link-item"><a href="/" class="link">Home</a></li>
 				<li class="link-item"><a href="/shop" class="link">shop</a></li>
 				<li class="link-item"><a href="#" class="link">new arrivals</a></li>
 				<li class="link-item"><a href="#" class="link">about</a></li>
 				<li class="link-item"><a href="#" class="link">reviews</a></li>
 			</ul>
+		</div>
+    </div>			
 	`;
 }
-//<button class="search-btn">search</button>
-//<input type="text" class="search-box" placeholder="search brand, product">
+
 creatNav();
+
+'use strict';
+
+/**
+ * navbar toggle
+ */
+
+const overlay = document.querySelector("[data-overlay]");
+const navOpenBtn = document.querySelector("[data-nav-open-btn]");
+const sidenav = document.querySelector("[data-navbar]");
+const navCloseBtn = document.querySelector("[data-nav-close-btn]");
+
+const navElemArr = [overlay, navOpenBtn, navCloseBtn];
+
+for (let i = 0; i < navElemArr.length; i++) {
+  navElemArr[i].addEventListener("click", function () {
+    sidenav.classList.toggle("active");
+    overlay.classList.toggle("active");
+  });
+}
+
+
+
+/**
+ * add active class on navbar when scrolled 200px from top
+ */
+
+const navbar = document.querySelector("[data-header]");
+
+window.addEventListener("scroll", function () {
+  window.scrollY >= 200 ? navbar.classList.add("active")
+    : navbar.classList.remove("active");
+})
+
 
 //nav popup
 const userImageButton = document.querySelector('#user-img');
@@ -71,3 +132,45 @@ searchBtn.addEventListener('click', () => {
 		location.href = `/search/${searchBox.value}`
 	}
 })
+
+
+
+// nav cart count
+
+const updateNavCartCounter = () => {
+	let cartCounter = document.querySelector('.cart-btn-badge');
+	
+	let cartItem = JSON.parse(localStorage.getItem('cart'));
+	
+	if(cartItem == null){
+		cartCounter.innerHTML = '0';
+	} else{
+		if(cartItem.length > 9){
+			cartCounter.innerHTML = '9+';
+		} else if(cartItem.length <= 9){
+			cartCounter.innerHTML = `${cartItem.length}`
+		}
+	}
+}
+
+updateNavCartCounter();
+
+// nav wishlist count
+
+const updateNavWishlistCounter = () => {
+	let WishlistCounter = document.querySelector('.btn-badge');
+	
+	let WishlistItem = JSON.parse(localStorage.getItem('wishlist'));
+	
+	if(WishlistItem == null){
+		WishlistCounter.innerHTML = '0';
+	} else{
+		if(WishlistItem.length > 9){
+			WishlistCounter.innerHTML = '9+';
+		} else if(WishlistItem.length <= 9){
+			WishlistCounter.innerHTML = `${WishlistItem.length}`
+		}
+	}
+}
+
+updateNavWishlistCounter();

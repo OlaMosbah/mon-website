@@ -1,7 +1,11 @@
+a{
+	display: block;
+}
+
 footer{
 	position: relative;
 	width: 100%;
-	padding: 40px 10vw;
+	padding: 50px 10vw;
 	padding-bottom: 80px;
 	background: #383838;
 }
@@ -10,27 +14,15 @@ footer{
 	display: flex;
 	width: 100%;
 	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 40px;
 }
 
 .footer-content .logo{
 	height: 160px;
 }
 
-.footer-ul-container{
-	width: 45%;
-	display: flex;
-	justify-content: space-between;
-}
-
-.category{
-	width: 200px;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 10px;
-	list-style: none;
-}
-
-.category-title{
+.footer-list-title{
 	grid-column: span 2;
 	text-transform: capitalize;
 	color: #fff;
@@ -38,10 +30,12 @@ footer{
 	margin-bottom: 20px;
 }
 
-.category .footer-link{
+.footer-link{
 	text-decoration: none;
 	text-transform: capitalize;
 	color: rgba(255, 255, 255, 0.75);
+	position: relative;
+	padding-block: 5px;
 }
 
 .footer-link:hover{
@@ -54,23 +48,32 @@ footer{
 	text-transform: capitalize;
 }
 
+.info{
+	display: flex;
+	gap: 10px;
+}
+
+.info ion-icon{
+	color: #fff;
+}
 .footer-title{
-	margin-top: 80px;
+	margin-top: 70px;
 	color: #fff;
 }
 
 .footer-social-container{
-	margin-top: 40px;
+	margin: 40px 10px 0px 10px;
 	display: flex;
-	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 40px;
+	justify-content: space-evenly;
 }
 
-.social-link{
+.policy-link{
 	color: #fff;
-	margin-left: 20px;
+	margin: 10px;
 	text-transform: capitalize;
 }
-
 
 .social-link:nth-child(1){
 	margin-left: 0;
@@ -87,25 +90,62 @@ footer{
 	background: rgba(0, 0, 0, 0.2);
 }
 
+/*-----------------------------------*\
+ * #FOOTER
+\*-----------------------------------*/
+.social-list {
+  display: flex;
+  gap: 10px;
+}
 
+.social-link {
+  color: #fff;
+  font-size: 18px;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #fff;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
 
+/*-----------------------------------*\
+ * #MEDIA QUARIES
+\*-----------------------------------*/
 
+/* responsive for larger than 480px screen */
+@media (min-width: 480px) {
+}
 
+/* responsive for larger than 580px screen */
+@media (min-width: 580px) {
 
+  .footer-container {
+    max-width: 550px;
+    margin-inline: auto;
+  }
+  
+  .footer-social-container{
+	justify-content: space-between;
+	}
+}
 
+/* responsive for larger than 768px screen */
+@media (min-width: 768px) {
+}
 
+/* responsive for larger than 992px screen */
+@media (min-width: 992px) {
+	footer{
+		padding: 50px 10vw;
+		padding-bottom: 80px;
+	}
 
+  .footer-container { max-width: 950px; }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* responsive for larger than 1200px screen */
+@media (min-width: 1200px) {
+  /* REUSED STYLE */
+  .footer-container { max-width: 1150px; }
+}

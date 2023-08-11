@@ -1,6 +1,47 @@
 @import 'nav.css';
 @import 'footer.css';
 
+
+/*-----------------------------------*\
+ * #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root {
+
+  /* colors */
+
+  --middle-blue-green: hsl(176, 35%, 63%);
+  --sonic-silver: hsl(0, 0%, 44%);
+
+  /* typography */
+  
+  --fs-1: 2.5rem;
+  --fs-2: 1.75rem;
+  --fs-3: 1.625rem;
+  --fs-5: 1.375rem;
+  --fw-500: 500;
+
+  /* spacing */
+  --section-padding: 60px;
+}
+
+/*-----------------------------------*\
+ * #RESET
+\*-----------------------------------*/
+/*input { display: block; }*/
+
+/*input {
+  width: 100%;
+  outline-color: var(--middle-blue-green);
+}*/
+
+
+body {
+  padding-block: 84px 46px;
+}
+
+.w-100 { width: 100%; }
+
 .hero-section{
 	width: 100%;
 	height: calc(100vh - 120px);
@@ -37,12 +78,12 @@
 	padding: 0 10px;
 	font-size: 30px;
 	font-weight: 500;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 	text-transform: capitalize;
 }
 
 .product-container{
-    padding: 0 10vw;
+    padding: 0 5vw;
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
@@ -54,15 +95,17 @@
 
 .product-card{
     flex: 0 0 auto;
-    width: 250px;
-    height: 450px;
-    margin-right: 40px;
+    width: 157px;
+    height: 364px;
+    margin-right: 21px;
+	transition: 0.5s ease;
 }
 
 .product-image{
     position: relative;
     width: 100%;
-    height: 250px;
+    height: 157px;
+	transition: 0.5s ease;
 	object-fit: cover;
     overflow: hidden;
 	cursor: pointer;
@@ -70,7 +113,7 @@
 
 .product-thumb{
     width: 100%;
-    height: 250px;
+    /*height: 250px;*/
     object-fit: cover;
 }
 
@@ -112,13 +155,15 @@
 
 .product-info{
 	width: 100%;
-	height: 100%;
+	height: 200px;
 	padding-top: 10px;
 	text-align: center;
 }
 
 .product-prand{
 	text-transform: uppercase;
+	font-size: 16px;
+	cursor: pointer;
 }
 
 .product-short-des{
@@ -145,7 +190,7 @@
 .pre-btn, .nxt-btn{
 	border: none;
 	width: 10vw;
-	height: 90%;
+	height: 75%;
 	position: absolute;
 	top: 15;
 	display: flex;
@@ -177,7 +222,7 @@
 /*collections*/
 .collection-container{
 	width: 100%;
-	padding: 0 7vw;
+	padding: 0 4vw;
 	display: grid;
 	grid-template-columns: repeat(2,1fr);
 	grid-gap: 10px;
@@ -200,7 +245,7 @@
 	transform: translate(-50%, -50%);
 	text-align: center;
 	color: #fff;
-	font-size: 50px;
+	font-size: 30px;
 	text-transform: capitalize;
 }
 
@@ -219,8 +264,8 @@
   right: 30px;
   background-color: #cd84ad;
   color: hsl(0, 0%, 100%);
-  font-size: 24px;
-  padding: 18px;
+  font-size: 18px;
+  padding: 11px;
   border-radius: 50%;
   z-index: 4;
   opacity: 0;
@@ -231,32 +276,22 @@
 .back-top-btn.active {
   opacity: 1;
   visibility: visible;
-  transform: translateY(-10px);
+  transform: translateY(-25px);
 }
-
 
 /*-----------------------------------*\
  * #NEWSLATTER
 \*-----------------------------------*/
-input,
-button {
-  background: none;
-  border: none;
-}
 
-.container {
-	padding-inline: 15px;
-	margin-inline: auto;
-	max-width: 1150px;
-}
+.newsletter .container { padding-inline: 15px; }
 
-.btn {
-  background: #cd84ad;
-  color: hsl(0, 0%, 100%);
+.newsletter .btn {
+  background: var(--background, #cd84ad);
+  color: var(--color, var(--white));
   font-weight: 600;
-  height: 60px;
+  height: var(--height, 60px);
   padding-inline: 50px;
-  border: 1px solid #cd84ad;
+  border: 1px solid var(--border-color, #cd84ad);
   border-radius: 6px;
   display: flex;
   justify-content: center;
@@ -264,25 +299,18 @@ button {
 }
 
 .btn-primary:is(:hover, :focus) {
-  background: hsl(0, 0%, 100%);
-  color: #cd84ad;
-  border-color: #cd84ad;
-}
-
-.section {
-	padding-block: 60px;
-}
-
-.w-100 { 
-	width: 100%; 
+  --background: var(--white);
+  --color: #cd84ad;
+  --border-color: #cd84ad;
 }
 
 .newsletter {
-	padding-bottom: 120px;
+	padding-block: var(--section-padding);
+	padding-bottom: 120px ;
 }
 
 .newsletter-card {
-  background-color: hsl(0, 0%, 96%);
+  background-color: hsl(0, 0%, 96%)/*var(--cultured)*/;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left;
@@ -291,22 +319,16 @@ button {
 }
 
 .newsletter-card .card-title {
-  color: hsl(0, 0%, 9%);
-  font-size: 36px;
-  font-weight: 500;
+  color: hsl(0, 0%, 9%)/*var(--eerie-black)*/;
+  font-size: var(--fs-3);
+  font-weight: var(--fw-500);
   line-height: 1.2;
   margin-bottom: 30px;
-  font-family: Sans-serif;
 }
 
-.newsletter-card .card-text {
-	margin-bottom: 30px; 
-	font-family: Sans-serif;
+.newsletter-card .card-text { margin-bottom: 30px;
 	color: hsl(0, 0%, 44%);
-	margin-inline: auto;
-	width: 480px;
-
-}
+ }
 
 .newsletter-card .input-wrapper {
   position: relative;
@@ -314,15 +336,12 @@ button {
 }
 
 .newsletter-card .input-field {
-	background: hsl(0, 0%, 100%);
-	height: 60px;
-	padding-inline: 50px 20px;
-	border-radius: 6px;
-	width: 100%;
-	outline-color: #cd84ad;
-	font-family: Sans-serif;
-	color: hsl(0, 0%, 44%);
-	
+  width: 100%;
+  outline-color: #cd84ad;
+  background: var(--white);
+  height: 60px;
+  padding-inline: 50px 20px;
+  border-radius: 6px;
 }
 
 .newsletter-card .input-wrapper ion-icon {
@@ -333,24 +352,99 @@ button {
   transform: translateY(-50%);
 }
 
+.newsletter-card .btn { gap: 10px; }
 
+/*-----------------------------------*\
+ * #MEDIA QUARIES
+\*-----------------------------------*/
 
-  /**
-   * NEWSLETTER
-   */
+/* responsive for larger than 480px screen */
 
- /* .newsletter-card > * {
-    max-width: 650px;
-    margin-inline: auto;
-  }*/
+@media (min-width: 480px) {
 
-.newsletter-card .card-form { 
-	position: relative; 
-	width: 650px;
-	margin-inline: auto;
+  /* CUSTOM PROPERTY */
+
+  :root {
+    /* typography */
+    --fs-1: 3rem;
+    --fs-2: 2rem;
+  }
+
+	.product-card{
+		flex: 0 0 auto;
+		width: 190px;
+		height: 390px;
+		margin-right: 30px;
+	}
+
+	.product-image{
+		height: 190px;
+	}
+
+  /* CATEGORY */
+	.collection p{
+		font-size: 35px;
+	}
 }
 
-  /*.newsletter-card .input-wrapper { margin-bottom: 0; }*/
+/* responsive for larger than 580px screen */
+
+@media (min-width: 580px) {
+
+  /* CUSTOM PROPERTY */
+
+  :root {
+    /* typography */
+    --fs-1: 3.75rem;
+    --fs-2: 2.375rem;
+    --fs-3: 2.25rem;
+  }
+  
+  .product-card{
+    flex: 0 0 auto;
+    width: 160px;
+    height: 360px;
+    margin-right: 20px;
+}
+
+.product-image{
+    height: 160px;
+}
+
+.collection p{
+	font-size: 40px;
+}
+
+  /* REUSED STYLE */
+
+  .container {
+    max-width: 550px;
+    margin-inline: auto;
+  }
+}
+
+/* responsive for larger than 768px screen */
+
+@media (min-width: 768px) {
+
+  /* REUSED STYLE */
+
+  .container { max-width: 700px; }
+
+	.collection p{
+		font-size: 45px;
+	}
+
+  /* NEWSLETTER */
+
+  .newsletter-card > * {
+    max-width: 480px;
+    margin-inline: auto;
+  }
+
+  .newsletter-card .card-form { position: relative; }
+
+  .newsletter-card .input-wrapper { margin-bottom: 0; }
 
   .newsletter-card .btn {
     position: absolute;
@@ -360,24 +454,81 @@ button {
     width: max-content;
     padding-inline: 35px;
     border-radius: 0 6px 6px 0;
-	gap: 10px;
-	cursor: pointer;
-	font-family: Sans-serif;
-	font-size: 16px;
+  }
+}
+
+/* responsive for larger than 992px screen */
+
+@media (min-width: 992px) {
+
+	/* CUSTOM PROPERTY */
+	:root {
+	  /* typography */
+	  --fs-1: 5rem;
+	}
+	
+	body {
+		padding-block: 0px;
+	}
+
+	/* REUSED STYLE */
+
+	.container { max-width: 950px; }
+
+	.product-category{
+		margin-bottom: 40px;
+	}
+
+	.product-prand{
+		font-size: 24px;
+	}
+
+	.product-card{
+		flex: 0 0 auto;
+		width: 250px;
+		height: 450px;
+		margin-right: 40px;
+	}
+
+	.product-image{
+		height: 250px;
+	}
+
+	  /* CATEGORY */
+
+	.collection-container{
+		padding: 0 7vw;
+	}
+
+	.collection p{
+		font-size: 50px;
+	}
+	
+	.back-top-btn {
+		font-size: 24px;
+		padding: 18px;
+	}  
+	.back-top-btn.active {
+		transform: translateY(-10px);
+	}
+
+	/* NEWSLETTER */
+
+	.newsletter-card .card-form { max-width: 650px; }
+}
+
+/* responsive for larger than 1200px screen */
+
+@media (min-width: 1200px) {
+
+  /* CUSTOM PROPERTY */
+
+  :root {
+    /* typography */
+    --fs-1: 6.25rem;
   }
 
+  /* REUSED STYLE */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  .container { max-width: 1150px; }
+}
