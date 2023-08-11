@@ -37,7 +37,7 @@ const creatNav = () => {
 				</a>
 				<a href="/cart" class="header-action-btn">
 					<ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-					<span class="cart-btn-badge, btn-badge">0</span>
+					<span class="cart-btn-badge">0</span>
 				</a>
 			</div>
 		</div>
