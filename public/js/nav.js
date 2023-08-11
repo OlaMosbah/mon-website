@@ -1,26 +1,35 @@
 const creatNav = () => {
 	let nav = document.querySelector('.navbar');
 	nav.innerHTML = `
-    <div class="container">
+    <div class="navContainer">
 		<div class="overlay" data-overlay></div>
 		<a href="/"><img src="../img/MON Logo.png" alt="MON logo" class="brand-logo"></a>
 		<div class="nav-items">
 			<!-- search -->
-			<div class="search">
+			<div class="search close">
+				<button class="search-close-btn" data-search-close-btn aria-label="Close search">
+					<ion-icon name="close-outline"></ion-icon>
+				</button>
 				<input type="search" name="search" placeholder="Search Anything..." class="search-box">
 				<ion-icon class="search-btn" name="search-outline" aria-hidden="true"></ion-icon>
 			</div>
+			<!-- -->
 		  	<div class="header-actions">
 				<a class="header-action-btn">
 					<ion-icon name="person-outline" id="user-img" aria-hidden="true"></ion-icon>
+					<!-- -->
 					<div class="login-logout-popup hide">
+						<button class="userpopup-close-btn" data-user-close-btn aria-label="Close User">
+							<ion-icon name="close-outline"></ion-icon>
+						</button>
 						<p class="account-info">Log in as, name</p>
 						<button class="btn" id="user-btn">Log out</button>
 					</div>
+					<!-- -->
 				</a>
 				<!-- search -->		
 				<button class="header-action-btn">
-					<ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+					<ion-icon name="search-outline" id="scnd-search-btn" aria-hidden="true"></ion-icon>
 				</button>
 				<a href="#" class="header-action-btn">
 					<ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
@@ -28,7 +37,7 @@ const creatNav = () => {
 				</a>
 				<a href="/cart" class="header-action-btn">
 					<ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-					<span class="cart-btn-badge">0</span>
+					<span class="cart-btn-badge, btn-badge">0</span>
 				</a>
 			</div>
 		</div>
@@ -40,7 +49,7 @@ const creatNav = () => {
 
 		<div class="sidenav" data-navbar>
 			<div class="sidenav-top">
-				<a href="/"><img src="../img/MON Logo.png" alt="MON logo" width="78" height="50"></a>
+				<a href="/"><img src="./img/MON Logo.png" alt="MON logo" width="78" height="50"></a>
 				<button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
 					<ion-icon name="close-outline"></ion-icon>
 				</button>
@@ -98,11 +107,15 @@ const userImageButton = document.querySelector('#user-img');
 const userPopup = document.querySelector('.login-logout-popup');
 const popuptext = document.querySelector('.account-info');
 const actionBtn = document.querySelector('#user-btn');
+const popupCloseBtn = document.querySelector('[data-user-close-btn]');
 
 userImageButton.addEventListener('click', () => {
 	userPopup.classList.toggle('hide');
 })
 
+popupCloseBtn.addEventListener('click', () => {
+	userPopup.classList.toggle('hide');
+})
 window.onload = () => {
 	let user = JSON.parse(sessionStorage.user || null);
 	if(user != null){
@@ -124,7 +137,6 @@ window.onload = () => {
 }
 
 // search box
-
 const searchBtn = document.querySelector('.search-btn');
 const searchBox = document.querySelector('.search-box');
 searchBtn.addEventListener('click', () => {
@@ -132,6 +144,20 @@ searchBtn.addEventListener('click', () => {
 		location.href = `/search/${searchBox.value}`
 	}
 })
+
+//second search phone view 
+const secSearchButton = document.querySelector('#scnd-search-btn');
+const search = document.querySelector('.search');
+const searchCloseBtn = document.querySelector('[data-search-close-btn]');
+
+secSearchButton.addEventListener('click', () => {
+	search.classList.toggle('close');
+})
+
+searchCloseBtn.addEventListener('click', () => {
+	search.classList.toggle('close');
+})
+
 
 
 
