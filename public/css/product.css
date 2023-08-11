@@ -24,7 +24,7 @@ section{
 
 .product-images{
     position: absolute;
-    bottom: 130px;
+    top: 445px;
     /*left: 50%;
     transform: translateX(-50%);*/
     width: 350px;
