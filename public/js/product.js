@@ -70,18 +70,19 @@ const setData = (data) => {
 	wishlistBtn.addEventListener('click', () => {
 		wishlistBtn.innerHTML = add_product_to_cart_or_wishlist('wishlist', data);
 		updateNavWishlistCounter();
-	})
+	});
 	
 	const cartBtn = document.querySelector('.cart-btn');
-		cartBtn.addEventListener('click', () => {
+	cartBtn.addEventListener('click', () => {
 		cartBtn.innerHTML = add_product_to_cart_or_wishlist('cart', data);
 		updateNavCartCounter();
-	})
+	});
+
 }
 
 // fetch data
 const fetchProductData = () => {
-		fetch('/get-products', {
+	fetch('/get-products', {
 		method: 'post',
         headers: new Headers({'Content-Type': 'application/json'}),
         body: JSON.stringify({id: productId})

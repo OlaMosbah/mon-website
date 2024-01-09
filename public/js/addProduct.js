@@ -28,8 +28,8 @@ discountPercentage.addEventListener('input', () => {
 })
 
 sellingPrice.addEventListener('input', () => {
-	let discount = (sellingPrice.value / actualPrice.value) * 100;
-	discountPercentage.value = discount;
+	let discount = 100-((sellingPrice.value / actualPrice.value) * 100);
+	discountPercentage.value = (discount).toFixed(1);
 })
 
 //upload image handle
