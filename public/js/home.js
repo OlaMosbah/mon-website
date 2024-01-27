@@ -48,6 +48,7 @@ const createProductSlider = (data, parent, title) => {
 
 const createProductCards = (data, parent) => {
 	// here parent is for search product
+	let discount=[];
 	let start = '<div class="product-container">';
 	let middle = ''; //this will cotain cart HTML
 	let end = '</div>';
@@ -57,7 +58,7 @@ const createProductCards = (data, parent) => {
 			middle += `
 			<div class="product-card">
 				<div class="product-image" onclick="location.href = '/products/${data[i].id}'">
-					<span class="discount-tag">${data[i].discount}% off</span>
+					<span class="discount-tag" hidden>${data[i].discount}% off</span>
 					<img src="${data[i].images[0]}" class="product-thumb" alt="">
 				</div>
 				<div class="product-info" >
@@ -67,15 +68,28 @@ const createProductCards = (data, parent) => {
 				</div>
 			</div>
 			`
+			discount = data[i].discount;
+			console.log(discount);
 		}
 	}
+	
+			
 	
 	if(parent){
 		let cardContainer = document.querySelector(parent);
 		cardContainer.innerHTML = start + middle + end;
-	} else{
+	}else{
 		return start + middle + end;
 	}
+	/*ola*/
+	let discountTag = document.querySelector('.discount-tag');
+	if(discount != 0 ){
+		discountTag.style.display = 'unset';
+	}
+	/*let discountTag = document.querySelector('.discount-tag');
+	if(discountTag != '0% off' ){
+		discountTag.style.display = 'unset';
+	}*/
 }
 
 const add_product_to_cart_or_wishlist = (type, product) => {

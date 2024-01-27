@@ -56,8 +56,48 @@ const creatNav = () => {
 			</div>
 			<ul class="links-container">
 				<li class="link-item"><a href="/" class="link">Home</a></li>
-				<li class="link-item"><a href="/shop" class="link">shop</a></li>
-				<li class="link-item"><a href="#" class="link">new arrivals</a></li>
+				<li class="link-item"><a href="/shop/All" onclick="getProductCat('shop')" class="link">shop all</a></li>
+				<li class="link-item">
+					<a href="#" class="link">Specials</a>
+					<ul class="dropdown">
+						<li class="link-item"><a href="/shop/New Arrivals" class="link">New Arrivals</a></li>
+						<li class="link-item"><a href="/shop/Best Seller" class="link">Best Seller</a></li>
+					</ul>
+				</li>
+				<li class="link-item">
+					<a href="#" class="link">fashion</a>
+					<ul class="dropdown">
+						<li class="link-item"><a href="/shop/Footwear" class="link">foot wear</a></li>
+						<li class="link-item"><a href="/shop/Gloves" class="link">gloves-soon</a></li>
+					</ul>
+				</li>
+				<li class="link-item">
+					<a href="#" class="link">Hair</a>
+					<ul class="dropdown">
+						<li class="link-item"><a href="/shop/Pillow Case" class="link">pillow cases</a></li>
+						<li class="link-item"><a href="/shop/Scrunchies" class="link">scrunchies</a></li>
+						<li class="link-item"><a href="/shop/Hair Clip" class="link">hair clips</a></li>
+						<li class="link-item"><a href="/shop/coming soon" class="link">hairband-soon</a></li>
+					</ul>
+				</li>
+				<li class="link-item">
+					<a href="#" class="link">bags</a>
+					<ul class="dropdown">
+						<li class="link-item"><a href="/shop/coming soon" class="link">comming soon</a></li>
+					</ul>
+				</li>
+				<li class="link-item">
+					<a href="#" class="link">accessories</a>
+					<ul class="dropdown">
+						<li class="link-item"><a href="/shop/coming soon" class="link">comming soon</a></li>
+					</ul>
+				</li>
+				<li class="link-item">
+					<a href="#" class="link">decor</a>
+					<ul class="dropdown">
+						<li class="link-item"><a href="/shop/Coasters" class="link">coasters</a></li>
+					</ul>
+				</li>
 				<li class="link-item"><a href="#" class="link">about</a></li>
 				<li class="link-item"><a href="#" class="link">reviews</a></li>
 			</ul>

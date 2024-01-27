@@ -158,6 +158,25 @@ a { color: inherit; }
 .link:hover{
 	opacity: 0.5/*1*/;
 }
+/*ola*/
+.dropdown li{
+	display: block;
+}
+
+.dropdown{
+	width: 350px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background: var(--white);
+	position: absolute;
+	z-index: 999;
+	display: none;
+}
+
+ul li:hover ul.dropdown{
+	display: block;
+}
+/*ola*/
 .search{
 	background: var(--white);
   position: fixed;

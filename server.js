@@ -294,16 +294,17 @@ app.post('/order', (req, res) => {
 	let transporter = nodemailer.createTransport({
 		service: 'gmail',
 		auth: {
-			user: process.env.EMAIL,
-			user: process.env.PASSWORD
+			user: 'olamosbah@gmail.com',//process.env.EMAIL
+			pass: '99771986'//process.env.PASSWORD
 		}
 	})
 	
 	const mailOption = {
 		from: 'olamosbah@gmail.com',
-		to: email,
+		to: 'mon.rafcroch@gmail.com',
 		subject: 'MON: Order Placed',
-		html: `
+		text: 'this is a test mail'
+		/*html: `
 		<!DOCTYPE html>
 		<html lang="en">
 			<head>
@@ -356,7 +357,7 @@ app.post('/order', (req, res) => {
 								
 			</body>
 		</html>
-		`
+		`*/
 	}
 	
 	let docName = email + Math.floor(Math.random() * 12345678910);
@@ -376,7 +377,7 @@ app.post('/order', (req, res) => {
 })
 
 //shop route
-app.get('/shop', (req, res) => {
+app.get('/shop/:key', (req, res) => {
     res.sendFile(path.join(staticPath,"shop.html"));
 })
 
